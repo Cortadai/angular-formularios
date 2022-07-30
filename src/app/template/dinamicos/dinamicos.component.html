@@ -1,0 +1,78 @@
+<h2>Template: <small>Dinamicos</small></h2>
+<hr>
+
+<form (ngSubmit)="guardar()" 
+    autocomplete="off"
+    #miFormulario="ngForm">
+
+    <!-- nombre -->
+    <div class="mb-3 row">
+        <label class="col-sm-3 col-form-label">Nombre</label>
+        <div class="col-sm-9">
+            <input class="form-control"
+                [ngModel]="persona.nombre"
+                name="nombre"
+                placeholder="Nombre de la persona"
+                required>
+            <span *ngIf="this.miFormulario.form.controls['nombre']?.errors &&
+                    this.miFormulario.form.controls['nombre']?.touched" 
+                class="form-text text-danger">
+                    Este campo es obligatorio
+            </span>
+        </div>
+    </div>
+
+    <!-- agregar fav -->
+    <div class="mb-3 row">
+        <label class="col-sm-3 col-form-label">Agregar</label>
+        <div class="col-sm-9">
+            <div class="input-group">
+                <input class="form-control"
+                    placeholder="Agregar favorito"
+                    [(ngModel)]="nuevo"
+                    name="nuevo"
+                    (keyup.enter)="agregarNuevo()">
+                <button class="btn btn-outline-primary" 
+                    type="button"
+                    (click)="agregarNuevo()">
+                        Agregar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- lista de favs -->
+    <div class="mb-3 row">
+        <label class="col-sm-3 col-form-label">Favoritos</label>
+        <div class="col-sm-9">
+            <div class="input-group mb-1" 
+                *ngFor="let fave of persona.faves; let i = index">
+                <input [(ngModel)]="fave.nombre"
+                    name="fave_{{i}}"
+                    class="form-control"
+                    required>
+                <button class="btn btn-outline-danger" 
+                    type="button"
+                    (click)="eliminar(i)">
+                        Eliminar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- boton guardar -->
+    <div class="row">
+        <div class="col-sm-12">
+            <button type="button"
+                (click)="guardar()"
+                [disabled]="miFormulario.invalid"
+                class="btn btn-primary float-end">
+                    Guardar
+            </button>
+        </div>
+    </div>
+
+</form>
+
+<span>Persona</span>
+<pre>{{persona | json}}</pre>
