@@ -3,97 +3,97 @@
 
 <form #miFormulario="ngForm">
 
-    <!-- radios -->
-    <div class="row mb-3">
-        <label class="col-sm-3 col-form-label">Genero</label>
-        <div class="col-sm-9 mt-2">
+  <!-- radios -->
+  <div class="row mb-3">
+    <label class="col-sm-3 col-form-label">Genero</label>
+    <div class="col-sm-9 mt-2">
 
-            <div class="form-check">
-                <input class="form-check-input" 
-                    type="radio" 
-                    name="radioGenero"
-                    value="M"
-                    [(ngModel)]="persona.genero"
-                    id="radioMasculino"
-                    required>
+      <div class="form-check">
+        <input [(ngModel)]="persona.genero"
+               class="form-check-input"
+               id="radioMasculino"
+               name="radioGenero"
+               required
+               type="radio"
+               value="M">
 
-                <label class="form-check-label" 
-                    for="radioMasculino">
-                        Masculino
-                </label>
-            </div>
+        <label class="form-check-label"
+               for="radioMasculino">
+          Masculino
+        </label>
+      </div>
 
-            <div class="form-check">
-                <input class="form-check-input" 
-                    type="radio" 
-                    name="radioGenero"
-                    value="F"
-                    [(ngModel)]="persona.genero"
-                    id="radioFemenino"
-                    required>
+      <div class="form-check">
+        <input [(ngModel)]="persona.genero"
+               class="form-check-input"
+               id="radioFemenino"
+               name="radioGenero"
+               required
+               type="radio"
+               value="F">
 
-                <label class="form-check-label" 
-                    for="radioFemenino">
-                        Femenino
-                </label>
-            </div>
+        <label class="form-check-label"
+               for="radioFemenino">
+          Femenino
+        </label>
+      </div>
 
-        </div>
     </div>
+  </div>
 
-    <!-- switches -->
-    <div class="row mb-3">
-        <label class="col-sm-3 col-form-label">Info.</label>
-        <div class="col-sm-9 mt-2">
+  <!-- switches -->
+  <div class="row mb-3">
+    <label class="col-sm-3 col-form-label">Info.</label>
+    <div class="col-sm-9 mt-2">
 
-            <div class="form-check form-switch">
-                <input class="form-check-input" 
-                    type="checkbox" 
-                    id="infoSwitch" 
-                    [(ngModel)]="persona.info"
-                    name="info"
-                    required>
+      <div class="form-check form-switch">
+        <input [(ngModel)]="persona.info"
+               class="form-check-input"
+               id="infoSwitch"
+               name="info"
+               required
+               type="checkbox">
 
-                <label class="form-check-label" 
-                    for="infoSwitch">
-                        Activada
-                </label>
-            </div>
-            
-        </div>
+        <label class="form-check-label"
+               for="infoSwitch">
+          Activada
+        </label>
+      </div>
+
     </div>
+  </div>
 
-    <!-- checkboxes -->
-    <div class="row mb-3">
-        <label class="col-sm-3 col-form-label">Terms.</label>
-        <div class="col-sm-9 mt-2">
-            
-            <div class="form-check">
-                <input class="form-check-input" 
-                    type="checkbox" 
-                    id="checkTerminos"
-                    [(ngModel)]="terms"
-                    name="terms"
-                    required>
+  <!-- checkboxes -->
+  <div class="row mb-3">
+    <label class="col-sm-3 col-form-label">Terms.</label>
+    <div class="col-sm-9 mt-2">
 
-                <label class="form-check-label" 
-                    for="checkTerminos">
-                        Aceptar terminos
-                </label>
-            </div>
-            
-        </div>
+      <div class="form-check">
+        <input [(ngModel)]="terms"
+               class="form-check-input"
+               id="checkTerminos"
+               name="terms"
+               required
+               type="checkbox">
+
+        <label class="form-check-label"
+               for="checkTerminos">
+          Aceptar terminos
+        </label>
+      </div>
+
     </div>
+  </div>
 
-    <!-- boton submit -->
-    <div class="row">
-        <div class="col">
-           <button class="btn btn-primary float-end"
-                [disabled]="miFormulario.invalid">
-                Aceptar
-           </button> 
-        </div>
+  <!-- boton submit -->
+  <div class="row">
+    <div class="col">
+      <button [disabled]="miFormulario.invalid"
+              class="btn btn-primary float-end">
+        Aceptar
+      </button>
     </div>
+  </div>
 
 </form>
 

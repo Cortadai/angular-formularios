@@ -2,12 +2,12 @@
 <hr>
 
 <ul class="list-group">
-    <li *ngFor="let menuItem of templateMenu"
-        class="list-group-item"
-        [routerLink]="[menuItem.ruta]"
-        routerLinkActive="active">
-        {{menuItem.texto}}
-    </li>
+  <li *ngFor="let menuItem of templateMenu"
+      [routerLink]="[menuItem.ruta]"
+      class="list-group-item"
+      routerLinkActive="active">
+    {{menuItem.texto}}
+  </li>
 </ul>
 
 
@@ -15,10 +15,23 @@
 <hr>
 
 <ul class="list-group">
-    <li *ngFor="let menuItem of reactiveMenu"
-        class="list-group-item"
-        [routerLink]="[menuItem.ruta]"
-        routerLinkActive="active">
-        {{menuItem.texto}}
-    </li>
+  <li *ngFor="let menuItem of reactiveMenu"
+      [routerLink]="[menuItem.ruta]"
+      class="list-group-item"
+      routerLinkActive="active">
+    {{menuItem.texto}}
+  </li>
+</ul>
+
+
+<h2 class="mt-5">Validaciones</h2>
+<hr>
+
+<ul class="list-group">
+  <li *ngFor="let menuItem of authMenu"
+      [routerLink]="[menuItem.ruta]"
+      class="list-group-item"
+      routerLinkActive="active">
+    {{menuItem.texto}}
+  </li>
 </ul>

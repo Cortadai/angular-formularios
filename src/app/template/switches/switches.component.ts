@@ -1,18 +1,17 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-switches',
   templateUrl: './switches.component.html',
-  styles: [
-  ]
+  styles: []
 })
 export class SwitchesComponent {
 
   persona = {
     genero: "F",
-    info:true,
+    info: true,
   }
 
-  terms:boolean=false;
+  terms: boolean = false;
 
 }
